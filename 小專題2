@@ -1,0 +1,98 @@
+#ifndef CPU_H
+#define CPU_H
+#include <string>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class CPU {
+private:
+	string name;
+	int money;
+	int numofbanker;
+	string role;
+	int deck[5];
+	string point;
+public:
+	CPU() {
+		money = 1000;
+		role = "Player";
+		point = "無妞";
+	}
+	CPU(string newName, string newrole, int newmoney) {
+		name = newName;
+		money = newmoney;
+		role = newrole;
+	}
+	string getName() {
+		return name;
+	}
+	void setName(string newName) {
+		name = newName;
+	}
+	int getMoney() {
+		return money;
+	}
+	void setMoney(int newMoney) {
+		money = newMoney;
+	}
+	string getRole() {
+		return role;
+	}
+	void setRole(string newrole) {
+		role = newrole;
+	}
+	int getDeck(int sort) {
+		return deck[sort];
+	}
+	void setDeck(int card, int count) {
+		deck[count] = card;
+	}
+	string getPoint() {
+		return point;
+	}
+	void setPoint(int p) {
+		switch (p) {
+		case -1:
+			point = "無妞";
+			break;
+		case 0:
+			point = "妞妞";
+			break;
+		case 1:
+			point = "妞一";
+			break;
+		case 2:
+			point = "妞二";
+			break;
+		case 3:
+			point = "妞三";
+			break;
+		case 4:
+			point = "妞四";
+			break;
+		case 5:
+			point = "妞五";
+			break;
+		case 6:
+			point = "妞六";
+			break;
+		case 7:
+			point = "妞七";
+			break;
+		case 8:
+			point = "妞八";
+			break;
+		case 9:
+			point = "妞九";
+			break;
+		}
+
+	}
+	void print() {
+		for (int i = 0; i < 5; i++) {
+			cout << setw(2) << deck[i] << " ";
+		}
+	}
+};
+#endif
